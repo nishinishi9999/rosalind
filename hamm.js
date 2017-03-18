@@ -1,6 +1,11 @@
-/*************
-* Rosalind 9
-*************/
+/**************************************************************************
+* Title  : Counting Point Mutations
+*
+* Given  : Two DNA strings s and t of equal length (not exceeding 1 kbp).
+* Return : The Hamming distance dH(s,t).
+*
+* URL    : http://rosalind.info/problems/hamm/
+**************************************************************************/
 
 var fs = require('fs');
 
