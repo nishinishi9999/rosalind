@@ -30,7 +30,13 @@ function fib(k)
 
 function permutation(arr)
     {
-        var len  = arr.length;
+        var len = arr.length;
+
+        var pos = 1;
+        for(var i = 1; i <= len; i++)
+            {
+                pos *= i;
+            }
         
         
         function _has_inverse_order(arr, offset)
@@ -52,7 +58,7 @@ function permutation(arr)
                         sub_arr.push(arr[i]);
                     }
 
-                sub_arr.sort();
+                sub_arr.sort( (a, b) => a-b );
 
                 for(var i = offset, j = 0; i < arr.length; i++, j++)
                     {
@@ -108,9 +114,8 @@ function permutation(arr)
                                 return arr;
                             }
                     }
-
             }
 
 
-        return { 'next': permutate };
+        return { 'next': permutate, 'pos': pos };
     }

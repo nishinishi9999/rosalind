@@ -77,6 +77,8 @@ function Util()
         
         this.encode_RNA   = encode_RNA;
         this.encode_DNA   = encode_DNA;
+        
+        this.get_lexographical_pos = get_lexographical_pos;
     }
 
 module.exports = new Util();
@@ -162,4 +164,21 @@ function encode_DNA(dna)
             }
 
         return text;
+    }
+
+function get_lexographical_pos(str, A, pos, i)
+    {
+        pos.push(str);
+        
+        if(str.length == i)
+            {
+                return;
+            }
+        
+        for(var j = 0; j < A.length; j++)
+            {
+                get_lexographical_pos(str+A[j], A, pos, i);
+            }
+        
+        return pos;
     }
